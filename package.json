@@ -8,11 +8,17 @@
     "version": "vinxi version"
   },
   "dependencies": {
+    "@kobalte/core": "^0.13.6",
+    "@solid-primitives/scroll": "^2.0.23",
     "@solidjs/meta": "^0.29.4",
-    "@solidjs/router": "^0.13.3",
-    "@solidjs/start": "^1.0.0",
-    "solid-js": "^1.8.17",
-    "vinxi": "^0.3.11"
+    "@solidjs/router": "^0.13.6",
+    "@solidjs/start": "^1.0.8",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "solid-js": "^1.9.1",
+    "tailwind-merge": "^2.5.3",
+    "tailwindcss-animate": "^1.0.7",
+    "vinxi": "^0.3.14"
   },
   "engines": {
     "node": ">=18"
