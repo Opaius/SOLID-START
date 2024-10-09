@@ -1,6 +1,5 @@
 import { useWindowScrollPosition } from "@solid-primitives/scroll";
-import Image from "@/components/Image";
-import MultiCards from "@/components/MultiCards";
+import "./clip-test.css";
 export default function Home() {
   return (
     <main>
@@ -10,7 +9,14 @@ export default function Home() {
       <div>
         <section class="">
           <div class="h-[60dvh] relative">
-            <MultiCards />
+            <img
+              class="absolute inset-0"
+              src="https://images.pexels.com/photos/28775008/pexels-photo-28775008/free-photo-of-yellow-door-with-cigars-and-tobacco-sign-in-philadelphia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            />
+            <img
+              class="absolute inset-0 clip-test"
+              src="https://images.pexels.com/photos/28238606/pexels-photo-28238606/free-photo-of-a-woman-in-a-white-dress-taking-a-picture-with-a-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            />
           </div>
         </section>
       </div>
