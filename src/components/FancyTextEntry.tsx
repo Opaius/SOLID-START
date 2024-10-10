@@ -2,12 +2,17 @@ import "./entry.css";
 export default function FancyTextEntry() {
   const text = "Pensiunea Perla Brazilor".split("");
   let firstInfo: HTMLDivElement | undefined;
+  let secondInfo: HTMLDivElement | undefined;
   return (
-    <div class="h-full w-full flex flex-col absolute inset-0 items-center justify-center gap-10">
-      <div ref={firstInfo} class="text-background font-light opacity-0">
+    <div class="flex absolute inset-0 flex-col gap-10 justify-center items-center w-full h-full">
+      <div
+        style={{ "animation-duration": "1s" }}
+        ref={firstInfo}
+        class="font-light opacity-0 text-background"
+      >
         Tradiție - Relaxare
       </div>
-      <div class="z-10 flex">
+      <div class="flex z-10">
         {text.map((char, index) => {
           if (char == " ") return undefined;
           return (
@@ -15,6 +20,7 @@ export default function FancyTextEntry() {
               onAnimationEnd={() => {
                 if (index == text.length - 1) {
                   firstInfo?.classList.add("slide-in-right");
+                  secondInfo?.classList.add("slide-in-right");
                 }
                 return;
               }}
@@ -27,6 +33,13 @@ export default function FancyTextEntry() {
             </div>
           );
         })}
+      </div>
+      <div
+        ref={secondInfo}
+        style={{ "animation-delay": "400ms", "animation-duration": "1s" }}
+        class="font-light opacity-0 text-background"
+      >
+        Vino în Bucovina
       </div>
     </div>
   );
