@@ -1,4 +1,5 @@
 import FancyImageSlider from "@/components/FancyImageSlider";
+import FancyTextEntry from "@/components/FancyTextEntry";
 import { Button } from "@/components/ui/button";
 import { TbCalendarStar, TbTableDown } from "solid-icons/tb";
 
@@ -9,10 +10,11 @@ export default function Home() {
         <Header />
       </div>
       <div>
-        <section class="">
+        <section>
           <div class="h-screen relative overflow-hidden">
             <FancyImageSlider />
             <div class="inset-0 absolute w-full h-full bg-orange-950 opacity-30" />
+            <FancyTextEntry />
           </div>
         </section>
       </div>
@@ -22,8 +24,8 @@ export default function Home() {
 function Header() {
   return (
     <header class="w-full z-20 absolute inset-0 backdrop-blur-sm grid grid-rows-2 max-h-max">
-      <div class="border-b-[1px] h-[4rem] grid grid-cols-3 place-items-center text-background *:font-normal *:text-center">
-        <Button variant={"ghost"}>
+      <div class="border-b-[1px] h-[4rem] grid grid-cols-3 place-items-center text-background *:font-normal *:text-center px-2">
+        <Button variant={"ghost"} class="">
           <TbTableDown size={13} class="mr-2" />
           Meniu
         </Button>

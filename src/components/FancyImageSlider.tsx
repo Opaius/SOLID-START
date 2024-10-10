@@ -3,6 +3,7 @@ import "./slider.css";
 const images = [
   "https://i.imghippo.com/files/jrkss1728492838.webp",
   "https://i.imghippo.com/files/WZBVv1728492826.webp",
+  "https://i.imghippo.com/files/E1xv61728537028.webp",
 ];
 export default function FancyImageSlider() {
   let timer: any;
@@ -11,7 +12,6 @@ export default function FancyImageSlider() {
   function triggerAnimation(index: number) {
     const nextIndex =
       currentIndex() - 1 < 0 ? refs.length - 1 : currentIndex() - 1;
-    console.log(`${nextIndex} ${currentIndex()}`);
     const currentElement = refs[index].classList;
     const nextElement = refs[nextIndex].classList;
 
