@@ -2,25 +2,56 @@ import FancyImageSlider from "@/components/FancyImageSlider";
 import FancyTextEntry from "@/components/FancyTextEntry";
 import FancyWavyDiv from "@/components/FancyWavyDiv";
 import { Button } from "@/components/ui/button";
+import { Card, CardTitle } from "@/components/ui/card";
 import { TbCalendarStar, TbTableDown } from "solid-icons/tb";
 
+const imagesFirstSection = [
+  "https://i.imghippo.com/files/jrkss1728492838.webp",
+  "https://i.imghippo.com/files/WZBVv1728492826.webp",
+  "https://i.imghippo.com/files/E1xv61728537028.webp",
+];
+const imagesSecondSection = [
+  "https://i.imghippo.com/files/11hJ61728997250.webp",
+  "https://i.imghippo.com/files/q7Iqs1728997282.webp",
+];
 export default function Home() {
   return (
     <main>
       <div class="grid auto-rows-[1fr_auto]">
         <div>
-          <section>
+          <section class="sticky inset-0">
             <Header />
             <div class="overflow-hidden relative h-screen">
-              <FancyImageSlider />
+              <FancyImageSlider images={imagesFirstSection} />
               <div class="absolute inset-0 w-full h-full opacity-30 bg-orange-950" />
               <FancyTextEntry />
             </div>
           </section>
-          <section class="p-5 h-screen">
-            <FancyWavyDiv>
-              <div class="w-full h-full bg-primary"></div>
-            </FancyWavyDiv>
+          <section class="h-screen">
+            <div class="relative p-5 w-full h-full bg-background">
+              <FancyWavyDiv>
+                <FancyImageSlider images={imagesSecondSection} />
+              </FancyWavyDiv>
+              <div class="flex absolute top-1/2 left-1/2 flex-col justify-between p-7 text-center shadow-md -translate-x-1/2 -translate-y-1/2 text-background bg-primary">
+                <span class="mb-5 font-semibold text-md">
+                  Spa pentru sănătatea ta
+                </span>
+                <div class="flex flex-col gap-3 text-sm *:before:mr-1 *:after:ml-1 *:before:content-['-'] *:after:content-['-']">
+                  <span>Salină</span>
+                  <span>Saună</span>
+                  <span>Piscină</span>
+                  <span>Ciubăr cu apă sărată</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="grid gap-5 bg-primary items-center overflow-x-scroll relative grid-flow-col w-screen h-screen *:w-[20rem] *:h-[30rem]">
+            <Card class="p-10 ml-5">
+              <CardTitle class="text-xl font-light text-center">
+                Ofertă Crăciun
+              </CardTitle>
+            </Card>{" "}
+            <Card></Card> <Card class="mr-5"></Card>
           </section>
         </div>
       </div>
