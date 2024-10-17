@@ -45,13 +45,15 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section class="grid gap-5 bg-primary items-center overflow-x-scroll relative grid-flow-col w-screen h-screen *:w-[20rem] *:h-[30rem]">
-            <Card class="p-10 ml-5">
-              <CardTitle class="text-xl font-light text-center">
-                Ofertă Crăciun
-              </CardTitle>
-            </Card>{" "}
-            <Card></Card> <Card class="mr-5"></Card>
+          <section class="grid relative auto-rows-[40%_60%] *:h-full *:w-full *:object-cover *:object center h-screen bg-primary">
+            <img
+              class="p-5 pb-5 bg-background"
+              src="https://i.imghippo.com/files/FMgnP1729175369.webp"
+            />
+            <img
+              class="p-5"
+              src="https://i.imghippo.com/files/cYGc51729175313.jpg"
+            />
           </section>
         </div>
       </div>

@@ -78,8 +78,14 @@
   body {
     @apply bg-background text-foreground;
   }
-  .cardLink {
-    @apply hover:scale-105 h-full flex items-center justify-center *:w-[20rem] *:h-4/5 snap-center;
+
+  .mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    clip-path: circle(50% at 50% 50%); /* Initial circle mask */
+    transform-style: preserve-3d;
+    transform-origin: center;
   }
 }
 .slide-in-top {
