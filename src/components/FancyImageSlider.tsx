@@ -1,7 +1,10 @@
 import { createSignal, onCleanup, onMount } from "solid-js";
 import "./slider.css";
 
-export default function FancyImageSlider(props:{images: string[]}) {
+export default function FancyImageSlider(props: {
+  images: string[];
+  class?: string;
+}) {
   let timer: any;
   const [isVisible, setIsVisible] = createSignal(false);
   const [currentIndex, setIndex] = createSignal<number>(0);
@@ -78,7 +81,10 @@ export default function FancyImageSlider(props:{images: string[]}) {
   const refs: HTMLImageElement[] = [];
 
   return (
-    <div ref={componentRef} class="overflow-hidden sticky w-full h-full">
+    <div
+      ref={componentRef}
+      class={`overflow-hidden sticky w-full h-full ${props.class}`}
+    >
       {props.images.map((src, index) => {
         return (
           <img

@@ -78,6 +78,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  .cardLink {
+    @apply hover:scale-105 h-full flex items-center justify-center *:w-[20rem] *:h-4/5 snap-center;
+  }
 }
 .slide-in-top {
   -webkit-animation: slide-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
