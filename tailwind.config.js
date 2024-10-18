@@ -71,15 +71,25 @@ module.exports = {
         },
         "caret-blink": {
           "0%,70%,100%": { opacity: "1" },
-          "20%,50%": { opacity: "0" }
-        }
+          "20%,50%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-out",
         "collapsible-up": "collapsible-up 0.2s ease-out",
-        "caret-blink": "caret-blink 1.25s ease-out infinite"
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
+      },
+      width: {
+        // Extend w-screen to include 100dvw
+        screen: "100vw",
+        "d-screen": "100dvw",
+      },
+      height: {
+        // Extend h-screen to include 100dvh
+        screen: "100vh",
+        "d-screen": "100dvh",
       },
     },
   },

@@ -4,8 +4,6 @@ import { createEffect, createSignal } from "solid-js";
 export default function FancyWavyDiv(props: { children: any }) {
   let wavy: HTMLDivElement | undefined;
   const scroll = useScrollPosition(() => wavy);
-  const [getMinus, setMinus] = createSignal(false);
-  createEffect(() => console.log(scroll()));
   function getScroll(): number {
     const relScroll = scroll() / 10;
     if (relScroll > 30) return 30;
