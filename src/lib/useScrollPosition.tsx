@@ -12,12 +12,11 @@ function useScrollPosition(ref: () => HTMLElement | undefined) {
   };
 
   onMount(() => {
-    const scrollElm = document.querySelector(".main-scroll-element");
-    scrollElm?.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initialize the position
 
     onCleanup(() => {
-      scrollElm?.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     });
   });
 

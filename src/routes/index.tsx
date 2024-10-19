@@ -1,13 +1,16 @@
 import FancyCards from "@/components/FancyCards";
 import FancyImageSlider from "@/components/FancyImageSlider";
+import { FancyMenu } from "@/components/FancyMenu";
 import FancyMovingImage from "@/components/FancyMovingImage";
 import FancyTextEntry from "@/components/FancyTextEntry";
 import FancyVideoPlayer from "@/components/FancyVideoPlayer";
 import FancyWavyDiv from "@/components/FancyWavyDiv";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
+import { snapToSections } from "@/lib/snapToSections";
 import useScrollPosition from "@/lib/useScrollPosition";
 import { TbCalendarStar, TbTableDown } from "solid-icons/tb";
+import { createEffect, createSignal, onCleanup } from "solid-js";
 const imagesFirstSection = [
   "https://i.imghippo.com/files/jrkss1728492838.webp",
   "https://i.imghippo.com/files/WZBVv1728492826.webp",
@@ -18,9 +21,12 @@ const imagesSecondSection = [
   "https://i.imghippo.com/files/q7Iqs1728997282.webp",
 ];
 export default function Home() {
+  snapToSections();
+  const { Menu, toggleMenu } = FancyMenu();
   return (
-    <main class="overflow-y-scroll h-d-screen scroll-smooth main-scroll-element">
-      <section class="relative snap-start">
+    <main class="">
+      <Menu />
+      <section data-index="0" class="relative section">
         <Header />
         <div class="overflow-hidden relative h-d-screen">
           <FancyImageSlider images={imagesFirstSection} />
@@ -28,10 +34,9 @@ export default function Home() {
           <FancyTextEntry />
         </div>
       </section>
-
       <CardCraciun />
       <CardRevelion />
-      <section class="h-d-screen snap-start">
+      <section data-index="3" class="section h-d-screen">
         <div class="relative p-5 w-full h-full bg-background">
           <FancyWavyDiv>
             <FancyImageSlider images={imagesSecondSection} />
@@ -49,7 +54,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section class="h-d-screen"></section>
     </main>
   );
 }
@@ -100,7 +104,10 @@ function CardCraciun() {
   }
 
   return (
-    <section class="grid  snap-start relative auto-rows-[40%_60%] h-d-screen bg-primary">
+    <section
+      data-index="1"
+      class="grid section relative auto-rows-[40%_60%] h-d-screen bg-primary"
+    >
       <FancyMovingImage
         scroll={scroll()}
         src="https://i.imghippo.com/files/cYGc51729175313.jpg"
@@ -174,7 +181,10 @@ function CardRevelion() {
     return scroll();
   }
   return (
-    <section class="grid  snap-start relative auto-rows-[40%_60%] h-d-screen bg-primary">
+    <section
+      data-index="2"
+      class="grid scroll section relative auto-rows-[40%_60%] h-d-screen bg-primary"
+    >
       <FancyMovingImage
         scroll={scroll()}
         src="https://i.imghippo.com/files/FMgnP1729175369.webp"
