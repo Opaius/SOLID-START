@@ -22,10 +22,8 @@ const imagesSecondSection = [
 ];
 export default function Home() {
   snapToSections();
-  const { Menu, toggleMenu } = FancyMenu();
   return (
     <main class="">
-      <Menu />
       <section data-index="0" class="relative section">
         <Header />
         <div class="overflow-hidden relative h-d-screen">
@@ -63,6 +61,7 @@ function Header() {
       class="grid absolute inset-0 z-20 grid-rows-2 w-full backdrop-blur-sm max-h-max slide-in-top"
       style={{ "animation-delay": "2s" }}
     >
+      <FancyMenu />
       <div class="border-b-[1px] h-[4rem] grid grid-cols-3 place-items-center text-background *:font-normal *:text-center px-2">
         <Button variant={"ghost"} class="">
           <TbTableDown size={13} class="mr-2" />
